@@ -1,0 +1,80 @@
+* {
+    margin: 0;              /*this 4 steps are mandatory*/
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*background-color: crimson;*/
+    width: 100%;
+    padding: 20px 100px;
+    /* these below steps are mandatory*/
+    display: flex; /* the flex keyword makes the list elements beside the logo*/
+    justify-content: space-between; /* the space between keyword makes the logo left side and list elements right side*/
+    align-items: center;
+    z-index: 99;
+}
+body {
+    display: flex; /* the flex keyword makes the list elements beside the logo*/
+    justify-content: center; /* the space between keyword makes the logo left side and list elements right side*/
+    align-items: center;
+    min-height: 100vh;
+    background: url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.logo {
+    font-size: 2em;
+    color: aliceblue;
+    user-select: none;
+}
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navigation a::after { /* this step is for a lone under the list elements as hover*/
+
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -9px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+
+}
+.navigation a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    margin-left: 40px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: aliceblue;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.navigation .btnLogin-popup:hover {
+    background-color: aliceblue;
+    color: black;
+}
